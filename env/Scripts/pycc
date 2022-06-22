@@ -1,0 +1,3 @@
+#!C:\Users\Utilisateur\Documents\Code\Python\Sound_stuff\env\Scripts\python.exe
+from numba.pycc import main
+main()

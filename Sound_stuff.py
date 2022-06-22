@@ -1,9 +1,21 @@
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt
 import seaborn as sns
-from librosa import librosa
-
 
 from glob import glob
 
+import librosa as lr
+import librosa.display
+import IPython.display as ipd
+
+from itertools import cycle
+
+sns.set_theme(style="white", palette=None)
+color_pal = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+color_cycle = cycle(plt.rcParams["axes.prop_cycle"].by_key()["color"])
+
+data_dir = './SoundFiles'
+audio_files = glob(f'{data_dir}/*.wav')
