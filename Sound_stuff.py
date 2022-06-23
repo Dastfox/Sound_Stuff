@@ -48,8 +48,11 @@ for i in range(len(audio_files)):
                      title=name,
                      color=color_pal[1])
         plt.savefig("./Plots/"f'{name} WF.png')
-        icon = ("./Plots/"f'{name} WF.png')
-        path = ("Shortcuts/"f'{Path(audio_files[i]).stem}.lnk')
+        filename = ( f'./Plots/{name} WF.png')
+        img = Image.open(filename)
+        img.save("./Plots/"f'{name} WF.ico') 
+        icon = (f'{dir_path}/Plots/{name} WF.ico')
+        path = (f'Shortcuts/{Path(audio_files[i]).stem}.lnk')
         shell = win32com.client.Dispatch("WScript.Shell")
         target = (f'{dir_path}/{audio_files[i]}')
         shortcut = shell.CreateShortCut(path)
@@ -57,8 +60,6 @@ for i in range(len(audio_files)):
         shortcut.IconLocation = icon
         shortcut.save()
         print(audio_files[i])
-        print(target)
-        print(icon)
         
         
     
